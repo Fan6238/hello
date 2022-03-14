@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Microblog</title>
+        <base href="/" />
+        <link rel="icon" href="favicon.ico" />
+        <link type="text/css" rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+        <style>
+            .label {border-radius:5px 5px 0px 0px;width:100px;}
+            .gray {background-color:gray;}
+            .text {font-size:16px;}
+            .hide {display:none;}
+            
+        </style>
+    </head>
+    <body>
+        <header style="padding-top:1rem;padding-bottom:1rem;"><h1>Microblog</h1></header>
+        <main>
+            <label for="message">What do you want post ?</label>
+            <textarea id="message"></textarea><br>
+            <label for="password">Your password !</label>
+            <input id="password" style="display:block;"></input>
+            <button id="post">Post</button>&nbsp;&nbsp;<span id="error" style="color:red;"></span>
+            <hr style="border:1px solid;">
+            <div>
+                <button class="label">MyPosts</button>
+                <button class="label gray">TimeLine</button>
+                <button class="label gray">MyFollows</button>
+                <button class="label gray">Special</button>
+                <button class="label gray">SetName</button>
+            </div>
+            <section class="text" id="posts">
+                <p id="postsList"></p>
+            </section>
+            <section class="text hide" id="timeline">
+                <p id="timeList"></p>
+            </section>
+            <section class="text hide" id="follows">
+                <p></p>
+                <input id="principal" style="display:block;"></input>
+                <button id="follow">Follow</button>&nbsp;&nbsp;
+                <button id="unfollow">unFollow</button>&nbsp;&nbsp;
+                <span id="followErr" style="color:red;"></span>
+                <p >Current followed : </p>
+                <p id="followsList"></p>
+            </section>
+            <section class="text hide" id="special">
+                <p id="specialPosts"></p>
+            </section>
+            <section class="text hide" id="profile">
+                <p>Current name is : <span id="current"></span></p>
+                <input id="name" style="display:block;"></input>
+                <button id="setname">Set Name</button>&nbsp;&nbsp;<span id="nameErr" style="color:red;"></span>
+            </section>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+</html>
