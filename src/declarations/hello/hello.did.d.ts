@@ -11,4 +11,5 @@ export interface _SERVICE {
   'set_name' : (arg_0: string, arg_1: string) => Promise<undefined>,
   'specialPosts' : (arg_0: Principal, arg_1: Time) => Promise<Array<Message>>,
   'timeline' : (arg_0: Time) => Promise<Array<Message>>,
+  'unfollow' : (arg_0: Principal, arg_1: string) => Promise<undefined>,
 }

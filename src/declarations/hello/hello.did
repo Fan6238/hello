@@ -15,4 +15,5 @@ service : {
   set_name: (text, text) -> ();
   specialPosts: (principal, Time) -> (vec Message);
   timeline: (Time) -> (vec Message);
+  unfollow: (principal, text) -> ();
 }

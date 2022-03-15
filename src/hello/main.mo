@@ -18,7 +18,7 @@ actor {
     public type Microblog = actor {
         get_name : shared query () -> async ?Text;
         // follow : shared (Principal) -> async ();
-        follows : shared query () -> async [Principal];
+        // follows : shared query () -> async [Principal];
         // post : shared (Text) -> async ();
         posts : shared query (Int) -> async [Message];
         // timeline : shared () -> async [Message];
@@ -50,6 +50,20 @@ actor {
         );
         if (exist == false) {
             followed := List.push(id, followed);
+        };
+    };
+
+    public shared (msgCall) func unfollow(id : Principal, password : Text,) : async () {
+        assert(password == "121212");
+        let exist = List.some<Principal>(
+            followed, 
+            func(element){element == id;}
+        );
+        if (exist == true) {
+            followed := List.filter<Principal>(
+                followed, 
+                func(element){element != id;}
+            );
         };
     };
 

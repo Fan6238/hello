@@ -15,6 +15,7 @@ export const idlFactory = ({ IDL }) => {
     'set_name' : IDL.Func([IDL.Text, IDL.Text], [], []),
     'specialPosts' : IDL.Func([IDL.Principal, Time], [IDL.Vec(Message)], []),
     'timeline' : IDL.Func([Time], [IDL.Vec(Message)], []),
+    'unfollow' : IDL.Func([IDL.Principal, IDL.Text], [], []),
   });
 };
 export const init = ({ IDL }) => { return []; };
